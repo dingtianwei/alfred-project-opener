@@ -148,7 +148,7 @@ def get_res(x, code_bin):
     for path in x.res_projects:
         res_items_list.append(get_item(path.name,str(path),code_bin,code_icon))
     if not res_items_list:
-        res_items_list.append(get_item("NO RESULT", "SEARCH NO RESULT here by this name", ""))
+        res_items_list.append(get_item("NO RESULT", "", ""))
 
     return res_dict
 
