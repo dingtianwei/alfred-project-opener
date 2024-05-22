@@ -11,10 +11,9 @@ code_icon_map = {
     "iTerm": "icons/iterm2_dir.png",
     "PyCharm": "icons/pycharm_dir.png",
     "IntelliJ IDEA": "icons/idea_dir.png",
-    "Visual Studio Code": "icons/vscode_png.png",
+    "Visual Studio Code": "icons/vscode_dir.png",
     "GoLand": "icons/goland_dir.png",
     "WebStorm": "icons/webstorm_dir.png"
-
 }
 
 default_icon="icons/default_dir.png"
@@ -151,7 +150,6 @@ def get_res(x, code_bin):
         res_items_list.append(get_item("NO RESULT", "", ""))
 
     return res_dict
-
 
 
 if __name__ == "__main__":
