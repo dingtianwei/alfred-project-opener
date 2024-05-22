@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 def get_item(title,subtitle,arg, autocomplete, code_bin):
     return {
         "type": "file",
@@ -34,7 +35,7 @@ def main():
     ways = sys.argv[2:]
     path_name = os.path.basename(path_string)
     res_dict = list_ways(path_string, path_name, ways)
-    print(res_dict)
+    print(json.dumps(res_dict,indent=2))
 
 
 if __name__ == '__main__':
