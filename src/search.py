@@ -7,6 +7,17 @@ from pathlib import Path
 
 CONFIG_FILE = os.getenv("alfred_project_opener_config", "~/.alfred_project_opener.json")
 
+code_icon_map = {
+    "iTerm": "icons/iterm2_dir.png",
+    "PyCharm": "icons/pycharm_dir.png",
+    "IntelliJ IDEA": "icons/idea_dir.png",
+    "Visual Studio Code": "icons/vscode_png.png",
+    "GoLand": "icons/goland_dir.png",
+    "WebStorm": "icons/webstorm_dir.png"
+
+}
+
+default_icon="icons/default_dir.png"
 
 class X:
     def __init__(self, config_file_path):
@@ -114,7 +125,7 @@ class X:
         self.get_res_projects(name_search_list)
         return self.res_projects
 
-def get_item(project_name,project_path,project_code_bin):
+def get_item(project_name,project_path,project_code_bin, icon_path=default_icon):
     return {
         "type": "file",
         "title": project_name,
@@ -122,7 +133,7 @@ def get_item(project_name,project_path,project_code_bin):
         "arg": project_path,
         "autocomplete": project_name,
         "icon": {
-            "path": "icons/dir.png"
+            "path": icon_path
         },
         "variables": {
             "code_bin": project_code_bin,
@@ -133,8 +144,9 @@ def get_item(project_name,project_path,project_code_bin):
 def get_res(x, code_bin):
     res_items_list = []
     res_dict = {"items": res_items_list}
+    code_icon = code_icon_map.get(code_bin, default_iconlsp)
     for path in x.res_projects:
-        res_items_list.append(get_item(path.name,str(path),code_bin))
+        res_items_list.append(get_item(path.name,str(path),code_bin,code_icon))
     if not res_items_list:
         res_items_list.append(get_item("NO RESULT", "SEARCH NO RESULT here by this name", ""))
 
