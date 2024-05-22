@@ -144,7 +144,7 @@ def get_item(project_name,project_path,project_code_bin, icon_path=default_icon)
 def get_res(x, code_bin):
     res_items_list = []
     res_dict = {"items": res_items_list}
-    code_icon = code_icon_map.get(code_bin, default_iconlsp)
+    code_icon = code_icon_map.get(code_bin, default_icon)
     for path in x.res_projects:
         res_items_list.append(get_item(path.name,str(path),code_bin,code_icon))
     if not res_items_list:
@@ -164,8 +164,4 @@ if __name__ == "__main__":
     res_dict = get_res(x, arg_code_bin)
     res_json = json.dumps(res_dict, indent=2)
     print(res_json)
-
-
-
-
 
