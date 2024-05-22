@@ -1,0 +1,40 @@
+{
+  "deep0_list_comment": "The elements within deep_0_list constitute the project itself.",
+  "deep1_list_comment": "The subdirectories within deep_1_list are projects.", 
+  "deep2_list_comment": "The subdirectories of the subdirectories within deep_2_list are projects.",
+  "deep3_list_comment": "It means that projects is in deep 3 of directory within this list.",
+  "filter_key_world_list": "The result of project will be filtered by the item of filter_list as keywords in project'path",
+  "filter_endwith_list":  "The result of project will be filtered by the item of filter_list as endwith  project'path",
+
+  "deep0_list": [
+    "Maccloud",
+    "zshconf"
+  ],
+
+  "deep1_list":[
+    "~/go/src",
+    "~/go/src/k8s.io"
+
+  ],
+
+  "deep2_list": [
+    "~/Projects",
+    "~/go/src/github.com"
+  ],
+
+  "deep3_list":
+  [
+  ],
+  
+  "keywords_filter_list": [
+    "golang.org"
+  ],
+
+  "endwith_filter_list": [
+   "go/src/k8s.io"
+  ],
+  "name_filter_list": [
+   "github.com"
+  ]
+}
+
